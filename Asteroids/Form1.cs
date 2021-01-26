@@ -16,5 +16,29 @@ namespace Asteroids
         {
             InitializeComponent();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            Form form = new Form();
+            form.Width = 1024;
+            form.Height = 768;
+            form.FormClosed += Form_FormClosed;
+            Game.Init(form);
+            form.Show();
+            this.Hide();
+            
+            Game.Draw();
+             
+        }
+
+        private void Form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
     }
 }
