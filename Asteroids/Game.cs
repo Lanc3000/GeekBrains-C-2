@@ -34,16 +34,33 @@ namespace Asteroids
 
             Buffer = context.Allocate(g, new Rectangle(0, 0, Width, Height));//связываем буфер с граф.объектом, чтобы рисовать в буфере
             timer.Interval = 100;
-            //timer.Tick += Timer_Tick;
+            timer.Tick += Timer_Tick; ;
             timer.Start();
             Load();
+            form.FormClosing += Form_FormClosing;
         }
+
+        private static void Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer.Stop();
+        }
+
+        private static void Timer_Tick(object sender, EventArgs e)
+        {
+            Game.Draw();
+            Game.Update();
+        }
+
         static void Load()
         {
             objes = new BaseObject[20];
-            for(int i = 0; i < objes.Length; i++)
+            for(int i = 0; i < 10; i++)
             {
-                objes[i] = new BaseObject(new Point(i * 10, i * 10), new Point(i, i), new Size(20, 20));
+                objes[i] = new Meteors(new Point(Width, Random.Next(0,Height)), new Point(-i, i), new Size(20, 20));
+            }
+            for (int i = 10; i < 20; i++)
+            {
+                objes[i] = new Star(new Point(Width, Random.Next(0, Height)), new Point(-i, 0 ), new Size(20, 20));
             }
         }
         public static void Draw()
@@ -56,6 +73,15 @@ namespace Asteroids
                 el.Draw();
             }
             Buffer.Render();
+        }
+        public static void Update()
+        {
+
+            foreach (var el in objes)
+            {
+                el.Update();
+            }
+            
         }
     }
 }

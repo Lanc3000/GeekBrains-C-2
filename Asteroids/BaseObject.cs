@@ -24,10 +24,50 @@ namespace Asteroids
             this.Dir = dir;
             this.Size = size;
         }
-        public void Draw()
+        public virtual void Draw()
         {
             Game.Buffer.Graphics.FillEllipse
                 (Brushes.White, Pos.X, Pos.Y, Size.Width, Size.Height);
         }
+        public virtual void Update()
+        {
+            Pos = new Point(Pos.X + Dir.X, Pos.Y + Dir.Y);
+            if (Pos.X < 0 || Pos.X > Game.Width)
+                Dir = new Point(-Dir.X, Dir.Y);
+            if (Pos.Y < 0 || Pos.Y > Game.Height)
+                Dir = new Point(Dir.X, -Dir.Y);
+        }
+    }
+    class Star: BaseObject
+    {
+        static Image Image { get; } = Image.FromFile("images\\star.png");
+        public Star(Point pos, Point dir, Size size):  base(pos, dir, size)
+        {
+            
+        }
+        public override void Draw()
+        {
+            Game.Buffer.Graphics.DrawImage(Image, Pos.X, Pos.Y, 20, 20);
+        }
+        public override void Update()
+        {
+            Pos = new Point(Pos.X + Dir.X, Pos.Y);
+            if (Pos.X < -Size.Width)
+            {
+                Pos = new Point(Game.Width, Game.Random.Next(0, Game.Height));
+            }
+        }
+    }
+    class Meteors : BaseObject {
+        static Image Image { get; } = Image.FromFile("images\\meteor.png");
+        public Meteors(Point pos, Point dir, Size size): base(pos, dir, size)
+        {
+
+        }
+        public override void Draw()
+        {
+            Game.Buffer.Graphics.DrawImage(Image, Pos);
+        }
+
     }
 }
