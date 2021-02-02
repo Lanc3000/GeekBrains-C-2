@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace Asteroids
 {
-    abstract class BaseObject
+    abstract class BaseObject: ICollison
     {
         protected Point Pos { get; set; }
         protected Point Dir { get; set; } //направление в виде смещения по х и у
         protected Size Size { get; set; }
+
+        public Rectangle Rect => new Rectangle(Pos, Size);
+
         public BaseObject()
         {
             Pos = new Point ( 0, 0);
@@ -26,8 +29,14 @@ namespace Asteroids
         }
         public abstract void Draw();
         public abstract void Update();
+        public abstract void CollisionUpdate();
+
+        public bool Collision(ICollison obj)
+        {
+            return this.Rect.IntersectsWith(obj.Rect);
+        }
     }
-    class Star: BaseObject
+    class Star: BaseObject 
     {
         static Image Image { get; } = Image.FromFile("images\\star.png");
         public Star(Point pos, Point dir, Size size):  base(pos, dir, size)
@@ -46,6 +55,8 @@ namespace Asteroids
                 Pos = new Point(Game.Width, Game.Random.Next(0, Game.Height));
             }
         }
+
+        public override void CollisionUpdate(){}
     }
     class Meteors : BaseObject {
         static Image Image { get; } = Image.FromFile("images\\meteor.png");
@@ -65,5 +76,35 @@ namespace Asteroids
                 Dir = new Point(Dir.X, -Dir.Y);
     }
 
+        public override void CollisionUpdate()
+        {
+            Pos = new Point(Pos.X, Game.Random.Next(0, Game.Height));
+        }
+    }
+    class Bullet : BaseObject {
+        public Bullet(Point pos, Point dir, Size size) : base(pos, dir, size)
+        {
+
+        }
+
+        public override void CollisionUpdate()
+        {
+            Pos = new Point(0, Game.Random.Next(0, Game.Height));
+        }
+
+        public override void Draw()
+        {
+            // Game.Buffer.Graphics.DrawImage(Image, Pos.X, Pos.Y, 20, 20);
+            Game.Buffer.Graphics.FillRectangle(Brushes.Red, Pos.X, Pos.Y, Size.Width, Size.Height);
+        }
+        public override void Update()
+        {
+            Pos = new Point(Pos.X + Dir.X, Pos.Y);
+            if (Pos.X > Game.Width)
+            {
+                Pos = new Point(0, Game.Random.Next(0, Game.Height));
+            }
+
+        }
     }
 }

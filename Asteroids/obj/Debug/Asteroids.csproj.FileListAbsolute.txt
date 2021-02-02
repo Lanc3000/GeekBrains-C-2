@@ -14,3 +14,4 @@ C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Aste
 C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\images\spaceship_96202.ico
 C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\images\star.png
 C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\images\meteor.png
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\images\health.png

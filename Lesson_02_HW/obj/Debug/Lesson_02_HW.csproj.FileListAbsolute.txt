@@ -1,0 +1,7 @@
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_02_HW\bin\Debug\Lesson_02_HW.exe.config
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_02_HW\bin\Debug\Lesson_02_HW.exe
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_02_HW\bin\Debug\Lesson_02_HW.pdb
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_02_HW\obj\Debug\Lesson_02_HW.csprojAssemblyReference.cache
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_02_HW\obj\Debug\Lesson_02_HW.csproj.CoreCompileInputs.cache
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_02_HW\obj\Debug\Lesson_02_HW.exe
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_02_HW\obj\Debug\Lesson_02_HW.pdb
