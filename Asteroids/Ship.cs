@@ -28,12 +28,16 @@ namespace Asteroids
         {
             Pos = new Point(Pos.X, Pos.Y + Dir.Y);
         }
-        
+        public void SetPos(Point pos)
+        {
+            Pos = pos;
+        }
+        public Point GetPos => Pos;
         public override void Update()
         {
             
         }
-        //TODO 
+       
         public override void CollisionUpdate()
         {
             

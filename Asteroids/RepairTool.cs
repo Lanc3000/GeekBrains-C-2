@@ -21,12 +21,16 @@ namespace Asteroids
 
         public override void Update()
         {
-
+            Pos = new Point(Pos.X + Dir.X, Pos.Y + Dir.Y);
+            if (Pos.X < 0 || Pos.X > Game.Width)
+                Dir = new Point(-Dir.X, Dir.Y);
+            if (Pos.Y < 0 || Pos.Y > Game.Height)
+                Dir = new Point(Dir.X, -Dir.Y);
         }
 
         public override void CollisionUpdate()
         {
-            
+            Pos = new Point(Game.Width, Game.Random.Next(0, Game.Height));
         }
     }
 }

@@ -17,15 +17,16 @@ namespace Asteroids
         public static int Height { get; private set; }
 
         public static int Health { get; private set; } = 100;
+        public static int Score { get; private set; } = 0;
 
        public static Image background = Image.FromFile("images\\fon.jpg");
 
         static Timer timer = new Timer();
 
         public static BaseObject[] objes;
-        public static Bullet bullet = new Bullet(new Point(0, 400), new Point(5, 0), new Size(10, 5));
-        public static Ship ship = new Ship(new Point(0, 400), new Point(5, 0), new Size(10, 0));
-        // public static RepairTool repairTool = new RepairTool(new Point(0,);
+        public static Bullet bullet;
+        public static Ship ship;
+        public static RepairTool repairTool;
         static Game()
         {
 
@@ -41,9 +42,6 @@ namespace Asteroids
                 Width = form.ClientSize.Width;
                 Height = form.ClientSize.Height;
             }
-            
-            
-
 
             Buffer = context.Allocate(g, new Rectangle(0, 0, Width, Height));//связываем буфер с граф.объектом, чтобы рисовать в буфере
             timer.Interval = 50;
@@ -52,18 +50,21 @@ namespace Asteroids
             Load();
             form.FormClosing += Form_FormClosing;
             form.KeyDown += Form_KeyDown;
-            form.MouseDown += Form_MouseDown;
+            form.MouseMove += Form_MouseMove;
         }
 
-        private static void Form_MouseDown(object sender, MouseEventArgs e)
+        private static void Form_MouseMove(object sender, MouseEventArgs e)
         {
-            throw new NotImplementedException();
+            ship.SetPos(e.Location);
         }
 
         private static void Form_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Up) ship.Up();
             if (e.KeyCode == Keys.Down) ship.Down();
+            if (e.KeyCode == Keys.Space) 
+                bullet = new Bullet(new Point(ship.GetPos.X + 10, ship.GetPos.Y), new Point(
+                 5, 0), new Size(10, 5));
         }
 
         private static void Form_FormClosing(object sender, FormClosingEventArgs e)
@@ -79,6 +80,8 @@ namespace Asteroids
 
         static void Load()
         {
+            ship = new Ship(new Point(0, 400), new Point(5, 5), new Size(10, 10));
+            repairTool = new RepairTool(new Point(Width, Random.Next(0, Height)), new Point(5, 5), new Size(10, 10));
             objes = new BaseObject[20];
             for(int i = 0; i < 10; i++)
             {
@@ -95,13 +98,15 @@ namespace Asteroids
             //Buffer.Graphics.Clear(Color.Black);
             Buffer.Graphics.DrawImage(background, 0, 0);
             //Buffer.Graphics.DrawRectangle(Pens.White, 10, 10, 100, 200);
-            Buffer.Graphics.DrawString(Health.ToString(), SystemFonts.DefaultFont, Brushes.White, 0, 0);
+            Buffer.Graphics.DrawString("Health: " + Health.ToString(), SystemFonts.DefaultFont, Brushes.Red, 0, 0);
+            Buffer.Graphics.DrawString("Score: " + Score.ToString(), SystemFonts.DefaultFont, Brushes.White, 100, 0);
             foreach(var el in objes)
             {
                 el.Draw();
             }
-            bullet.Draw();
+            bullet?.Draw();
             ship.Draw();
+            repairTool.Draw();
             Buffer.Render();
         }
         public static void Update()
@@ -110,12 +115,20 @@ namespace Asteroids
             foreach (var el in objes)
             {
                 el.Update();
-                if (el is Meteors && el.Collision(bullet)) {
+                if (bullet != null && el is Meteors && el.Collision(bullet)) {
+                    Score += 10;
                     bullet.CollisionUpdate();
                     el.CollisionUpdate();
                 }
+
             }
-            bullet.Update();
+            if(repairTool.Collision(ship))
+            {
+                Health += 10;
+                repairTool.CollisionUpdate();
+            }
+            repairTool.Update();
+            bullet?.Update(); // if(bullet != null) bullet.Update();
             
         }
     }
