@@ -143,6 +143,7 @@ namespace Asteroids
 
                     if (i >= 0 && meteorsList[i].Collision(bulletsList[j]))
                     {
+                        
                         meteorsList.RemoveAt(i);
                         i--;
                         bulletsList.RemoveAt(j);
@@ -152,7 +153,12 @@ namespace Asteroids
                     if (meteorsList.Count == 0)
                     {
                         CountOfMeteors++;
-                        Game.Update();
+                        meteorsList = new List<Meteors>(CountOfMeteors);
+
+                        for (int k = 0; k < CountOfMeteors; k++)
+                        {
+                            meteorsList.Add(new Meteors(new Point(Width, Random.Next(0, Height)), new Point(-k, k), new Size(20, 20)));
+                        }
                     }
                 }
             }
