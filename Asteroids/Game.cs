@@ -19,12 +19,15 @@ namespace Asteroids
         public static int Health { get; private set; } = 100;
         public static int Score { get; private set; } = 0;
 
+        public static int CountOfMeteors { get; private set; } = 10;
+
        public static Image background = Image.FromFile("images\\fon.jpg");
 
         static Timer timer = new Timer();
 
         public static BaseObject[] objes;
-        public static Bullet bullet;
+        public static List<Meteors> meteorsList;
+        public static List<Bullet> bulletsList;
         public static Ship ship;
         public static RepairTool repairTool;
         static Game()
@@ -63,8 +66,8 @@ namespace Asteroids
             if (e.KeyCode == Keys.Up) ship.Up();
             if (e.KeyCode == Keys.Down) ship.Down();
             if (e.KeyCode == Keys.Space) 
-                bullet = new Bullet(new Point(ship.GetPos.X + 10, ship.GetPos.Y), new Point(
-                 5, 0), new Size(10, 5));
+                bulletsList.Add(new Bullet(new Point(ship.GetPos.X + 10, ship.GetPos.Y), new Point(
+                 5, 0), new Size(10, 5)));
         }
 
         private static void Form_FormClosing(object sender, FormClosingEventArgs e)
@@ -82,12 +85,17 @@ namespace Asteroids
         {
             ship = new Ship(new Point(0, 400), new Point(5, 5), new Size(10, 10));
             repairTool = new RepairTool(new Point(Width, Random.Next(0, Height)), new Point(5, 5), new Size(10, 10));
-            objes = new BaseObject[20];
-            for(int i = 0; i < 10; i++)
+            objes = new BaseObject[10];
+
+            bulletsList = new List<Bullet>();
+
+            meteorsList = new List<Meteors>(CountOfMeteors);
+
+            for(int i = 0; i < CountOfMeteors; i++)
             {
-                objes[i] = new Meteors(new Point(Width, Random.Next(0,Height)), new Point(-i, i), new Size(20, 20));
+                meteorsList.Add(new Meteors(new Point(Width, Random.Next(0, Height)), new Point(-i, i), new Size(20, 20)));
             }
-            for (int i = 10; i < 20; i++)
+            for (int i = 0; i < 10; i++)
             {
                 objes[i] = new Star(new Point(Width, Random.Next(0, Height)), new Point(-i, 0 ), new Size(20, 20));
             }
@@ -95,40 +103,67 @@ namespace Asteroids
         }
         public static void Draw()
         {
-            //Buffer.Graphics.Clear(Color.Black);
             Buffer.Graphics.DrawImage(background, 0, 0);
-            //Buffer.Graphics.DrawRectangle(Pens.White, 10, 10, 100, 200);
             Buffer.Graphics.DrawString("Health: " + Health.ToString(), SystemFonts.DefaultFont, Brushes.Red, 0, 0);
             Buffer.Graphics.DrawString("Score: " + Score.ToString(), SystemFonts.DefaultFont, Brushes.White, 100, 0);
+            
             foreach(var el in objes)
-            {
                 el.Draw();
-            }
-            bullet?.Draw();
+
+            foreach (var el in meteorsList)
+                el.Draw();
+
+            foreach (var el in bulletsList)
+                el.Draw();
+            
             ship.Draw();
             repairTool.Draw();
             Buffer.Render();
         }
-        public static void Update()
+        public static void Update() //TODO: разделить логику на методы - слишком большой метод
         {
 
             foreach (var el in objes)
-            {
                 el.Update();
-                if (bullet != null && el is Meteors && el.Collision(bullet)) {
-                    Score += 10;
-                    bullet.CollisionUpdate();
-                    el.CollisionUpdate();
+
+            foreach (var el in bulletsList)
+                el.Update();
+
+            for (int i = 0; i < meteorsList.Count; i++) //хотел сделать с двумя foreach - 
+            {                                           // компилятор заругался на проблемы с коллекциями
+                meteorsList[i].Update();
+
+                if (meteorsList[i].Collision(ship))
+                {
+                    Health -= 10;
+                    meteorsList[i].CollisionUpdate();
                 }
 
+                for(int j = 0; j < bulletsList.Count; j++) {
+
+                    if (i >= 0 && meteorsList[i].Collision(bulletsList[j]))
+                    {
+                        meteorsList.RemoveAt(i);
+                        i--;
+                        bulletsList.RemoveAt(j);
+                        j--;
+                        Score += 10;
+                    }
+                    if (meteorsList.Count == 0)
+                    {
+                        CountOfMeteors++;
+                        Game.Update();
+                    }
+                }
             }
+  
             if(repairTool.Collision(ship))
             {
                 Health += 10;
                 repairTool.CollisionUpdate();
             }
             repairTool.Update();
-            bullet?.Update(); // if(bullet != null) bullet.Update();
+            //bullet?.Update(); // if(bullet != null) bullet.Update();
             
         }
     }

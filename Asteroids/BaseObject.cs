@@ -74,8 +74,8 @@ namespace Asteroids
                 Dir = new Point(-Dir.X, Dir.Y);
             if (Pos.Y< 0 || Pos.Y> Game.Height)
                 Dir = new Point(Dir.X, -Dir.Y);
-    }
-
+        }
+        
         public override void CollisionUpdate()
         {
             Pos = new Point(Pos.X, Game.Random.Next(0, Game.Height));
