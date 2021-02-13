@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteroids", "Asteroids\Aste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_04_HW", "Lesson_04_HW\Lesson_04_HW.csproj", "{EE05949E-8251-4184-85C3-60A9F1C23503}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson_05_HW", "Lesson_05_HW\Lesson_05_HW.csproj", "{D2D96672-2B38-46D9-A2E1-7CDC163356E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EE05949E-8251-4184-85C3-60A9F1C23503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE05949E-8251-4184-85C3-60A9F1C23503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE05949E-8251-4184-85C3-60A9F1C23503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D96672-2B38-46D9-A2E1-7CDC163356E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D96672-2B38-46D9-A2E1-7CDC163356E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D96672-2B38-46D9-A2E1-7CDC163356E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D96672-2B38-46D9-A2E1-7CDC163356E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
