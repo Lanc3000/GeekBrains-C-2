@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Lesson_05_HW;
 
 namespace Lesson_05_HW
 {
@@ -20,9 +21,29 @@ namespace Lesson_05_HW
     /// </summary>
     public partial class MainWindow : Window
     {
+        Doubler doubler;
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+        private void wndMain_Loaded(object sender, RoutedEventArgs e)
+        {
+            doubler = new Doubler(10, 100);
+            tbFinish.Text = doubler.Finish.ToString();
+            tbCurrent.Text = doubler.Current.ToString();
+        }
+
+        private void btnPlus_Click(object sender, RoutedEventArgs e)
+        {
+            doubler.Plus();
+            tbCurrent.Text = doubler.ToString();
+        }
+
+        private void btnMulti_Click(object sender, RoutedEventArgs e)
+        {
+            doubler.Multi();
+            tbCurrent.Text = doubler.ToString();
         }
     }
 }

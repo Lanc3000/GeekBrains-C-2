@@ -13,3 +13,4 @@ C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Less
 C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_05_HW\obj\Debug\Lesson_05_HW.csproj.CoreCompileInputs.cache
 C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_05_HW\obj\Debug\Lesson_05_HW.exe
 C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_05_HW\obj\Debug\Lesson_05_HW.pdb
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_05_HW\obj\Debug\App.baml
