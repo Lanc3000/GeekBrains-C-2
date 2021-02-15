@@ -1,0 +1,17 @@
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\Asteroids.exe.config
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\Asteroids.exe
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\Asteroids.pdb
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\obj\Debug\Asteroids.csprojAssemblyReference.cache
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\obj\Debug\Asteroids.Form1.resources
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\obj\Debug\Asteroids.Properties.Resources.resources
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\obj\Debug\Asteroids.csproj.GenerateResource.cache
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\obj\Debug\Asteroids.csproj.CoreCompileInputs.cache
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\obj\Debug\Asteroids.exe
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\obj\Debug\Asteroids.pdb
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\images\icon-ship.png
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\images\fon.jpg
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\images\ship.png
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\images\spaceship_96202.ico
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\images\star.png
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\images\meteor.png
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Asteroids\bin\Debug\images\health.png
