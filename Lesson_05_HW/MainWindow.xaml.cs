@@ -49,6 +49,13 @@ namespace Lesson_05_HW
         private void btnReset_Click(object sender, RoutedEventArgs e)
         {
             doubler.Reset();
+            tbCurrent.Text = doubler.ToString();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            doubler.Back();
+            tbCurrent.Text = doubler.ToString();
         }
     }
 }

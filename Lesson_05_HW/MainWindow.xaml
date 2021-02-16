@@ -28,7 +28,7 @@
             </Grid.RowDefinitions>
             <Button Grid.Column="0" Grid.Row="0" Content="+1" x:Name="btnPlus" Click="btnPlus_Click"/>
             <Button Grid.Column="0" Grid.Row="1" Content="x2" x:Name="btnMulti" Click="btnMulti_Click"/>
-            <Button Grid.Column="0" Grid.Row="2" x:Name="btnBack">
+            <Button Grid.Column="0" Grid.Row="2" x:Name="btnBack" Click="btnBack_Click">
                 <StackPanel>
                     <Image Source="/Images/Move Previous (Arrow) Green64.png" Width="20"/>
                     <TextBlock>Назад</TextBlock>
