@@ -50,7 +50,7 @@ namespace Lesson_05_HW
         public int Multi()
         {
             history.Push(current);
-            current++;
+            current *= 2;
             return current;
         }
         public void Reset()

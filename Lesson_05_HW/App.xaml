@@ -6,6 +6,6 @@
              Startup="Application_Startup">
     <!--StartupUri="MainWindow.xaml">-->
     <Application.Resources>
-        <sys:String x:Key="strApp">Hello, from App.xaml!</sys:String> 
+        
     </Application.Resources>
 </Application>

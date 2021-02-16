@@ -45,5 +45,10 @@ namespace Lesson_05_HW
             doubler.Multi();
             tbCurrent.Text = doubler.ToString();
         }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            doubler.Reset();
+        }
     }
 }

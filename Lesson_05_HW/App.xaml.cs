@@ -16,7 +16,7 @@ namespace Lesson_05_HW
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             MainWindow wnd = new MainWindow();
-            wnd.Title = "Hello, WPF!";
+            //wnd.Title = "Hello, WPF!";
             wnd.Show();
         }
     }
