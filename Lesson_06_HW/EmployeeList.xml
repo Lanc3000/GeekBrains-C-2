@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Employee>
+    <FIO>Иванова Татьяна Владимировна</FIO>
+    <DateOfPreviousExam>16.12.2020</DateOfPreviousExam>
+    <EmployeeBrigade>Бригада цифрознаковых индикаторов</EmployeeBrigade>
+  </Employee>
+  <Employee>
+    <FIO>Перевозчикова Ирина Ивановна</FIO>
+    <DateOfPreviousExam>16.12.2020</DateOfPreviousExam>
+    <EmployeeBrigade>Бригада цифрознаковых индикаторов</EmployeeBrigade>
+  </Employee>
+  <Employee>
+    <FIO>Мазуренко Елена Дмитриевна</FIO>
+    <DateOfPreviousExam>16.12.2020</DateOfPreviousExam>
+    <EmployeeBrigade>Бригада цифрознаковых индикаторов</EmployeeBrigade>
+  </Employee>
+  <Employee>
+    <FIO>Макаренкова Виктория Ивановна</FIO>
+    <DateOfPreviousExam>18.12.2020</DateOfPreviousExam>
+    <EmployeeBrigade>Бригада стабилитронов</EmployeeBrigade>
+  </Employee>
+  <Employee>
+    <FIO>Чудакова Анна Константиновна</FIO>
+    <DateOfPreviousExam>18.12.2020</DateOfPreviousExam>
+    <EmployeeBrigade>Бригада стабилитронов</EmployeeBrigade>
+  </Employee>
+  <Employee>
+    <FIO>Зеленина Ирина Владимировна</FIO>
+    <DateOfPreviousExam>19.12.2020</DateOfPreviousExam>
+    <EmployeeBrigade>Бригада СВЧ-диодов</EmployeeBrigade>
+  </Employee>
+  <Employee>
+    <FIO>Костина Ольга Александровна</FIO>
+    <DateOfPreviousExam>19.12.2020</DateOfPreviousExam>
+    <EmployeeBrigade>Бригада СВЧ-диодов</EmployeeBrigade>
+  </Employee>
+</ArrayOfEmployee>
