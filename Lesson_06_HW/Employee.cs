@@ -12,6 +12,10 @@ namespace Lesson_06_HW
         public string FIO { get; set; }
         public DateTime DateOfPreviousExam { get; set; }
         public Brigade EmployeeBrigade { get; set; }
+        public Employee()
+        {
+
+        }
         public string GetBrigadeName
         {
             get { return EmployeeBrigade?.BrigadeName; }

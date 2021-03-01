@@ -16,6 +16,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Xml.Serialization;
 using System.IO;
+using Microsoft.Win32;
 
 namespace Lesson_06_HW
 {
@@ -43,7 +44,13 @@ namespace Lesson_06_HW
 
         private void Open_Click(object sender, RoutedEventArgs e)
         {
-
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "XML файл|*.XML|All files|*.*";
+            if(dialog.ShowDialog()== true)
+            {
+                LoadXML(dialog.FileName);
+                dgMainList.ItemsSource = employees;
+            }
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -53,17 +60,48 @@ namespace Lesson_06_HW
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            dgMainList.IsReadOnly = !dgMainList.IsReadOnly;
+            if (dgMainList.IsReadOnly)
+            {
+                Edit.Content = "Разрешить редактирование";
+            }
+            else
+            {
+                Edit.Content = "Запретить редактирование";
+            }
         }
 
         private void btnAddEmployee_Click(object sender, RoutedEventArgs e)
         {
-
+            if (tbAddFIO.Text == "ФИО" || tbAddFIO.Text == "")
+            {
+                MessageBox.Show("Введите ФИО", "Ошибка ввода", MessageBoxButton.OK);
+            }
+            else
+            {
+                employees.Add(new Employee() { 
+                    FIO = tbAddFIO.Text,
+                    GetBrigadeName = cbAddBrigade.SelectedItem.ToString()
+                });
+                MessageBox.Show($"Сотрудник {tbAddFIO.Text} добавлен в {cbAddBrigade.SelectedItem}.");
+                tbAddFIO.Foreground = Brushes.Gray;
+                tbAddFIO.Text = "ФИО";
+                cbAddBrigade.SelectedIndex = 0;
+            }
         }
 
         private void btnAddBrigade_Click(object sender, RoutedEventArgs e)
         {
-
+            if (tbAddNewBrigade.Text == "Название бригады" || tbAddNewBrigade.Text == "") {
+                MessageBox.Show("Введите название бригады", "Ошибка ввода", MessageBoxButton.OK);
+            }
+            else
+            {
+                MessageBox.Show($"Бригада {tbAddNewBrigade.Text} добавлена");
+                brigades.Add(tbAddNewBrigade.Text);
+                tbAddNewBrigade.Foreground = Brushes.Gray;
+                tbAddNewBrigade.Text = "Название бригады";
+            }
         }
         public void LoadXML(string filePath)
         {
@@ -74,7 +112,7 @@ namespace Lesson_06_HW
                     employees = (ObservableCollection<Employee>)formatter.Deserialize(fileStream);
                 }
             }
-            catch (Exception e) { Console.WriteLine($"Ошибка чтения с файла {e.Message}"); }
+            catch { }
         }
     }
 }

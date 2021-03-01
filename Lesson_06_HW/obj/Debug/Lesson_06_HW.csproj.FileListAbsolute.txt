@@ -13,3 +13,4 @@ C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Less
 C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_06_HW\obj\Debug\Lesson_06_HW.csproj.CoreCompileInputs.cache
 C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_06_HW\obj\Debug\Lesson_06_HW.exe
 C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_06_HW\obj\Debug\Lesson_06_HW.pdb
+C:\Users\Тимур\Desktop\Учёба\Курс по C#2\HomeWork\Asteroids\Lesson_06_HW\obj\Debug\GeneratedInternalTypeHelper.g.cs

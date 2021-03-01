@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lesson_06_HW
 {
-    public class Brigade
+    public class Brigade: IComparable
     {
         public string BrigadeName { get; set; }
         public Brigade()
@@ -20,6 +20,11 @@ namespace Lesson_06_HW
         public override string ToString()
         {
             return BrigadeName;
+        }
+
+        public int CompareTo(object obj)
+        {
+            return string.Compare(this.BrigadeName, (obj as Brigade)?.BrigadeName);
         }
     }
 }
