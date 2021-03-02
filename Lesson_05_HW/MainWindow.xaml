@@ -1,0 +1,43 @@
+﻿<Window x:Name="wndMain" x:Class="Lesson_05_HW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Lesson_05_HW"
+        mc:Ignorable="d"
+        Title="Удвойтель" Height="250" Width="200" Loaded="wndMain_Loaded">
+    <StackPanel>
+        <Menu>
+            <MenuItem Header="File">
+                <MenuItem Header="New"/>
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Content="+1" x:Name="btnPlus" Click="btnPlus_Click"/>
+            <Button Grid.Column="0" Grid.Row="1" Content="x2" x:Name="btnMulti" Click="btnMulti_Click"/>
+            <Button Grid.Column="0" Grid.Row="2" x:Name="btnBack" Click="btnBack_Click">
+                <StackPanel>
+                    <Image Source="/Images/Move Previous (Arrow) Green64.png" Width="20"/>
+                    <TextBlock>Назад</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="0" Grid.Row="3"  Content="Reset" x:Name="btnReset" Click="btnReset_Click"/>
+            <TextBlock x:Name="tbFinish" Text="50" Grid.Column="1" Grid.Row="0" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock x:Name="tbCurrent" Text="50" Grid.Column="1" Grid.Row="1" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+    </StackPanel>
+</Window>
+
