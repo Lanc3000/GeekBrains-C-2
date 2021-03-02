@@ -55,7 +55,12 @@ namespace Lesson_06_HW
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "XML файл|*.XML|All files|*.*";
+            if(dialog.ShowDialog() == true)
+            {
+                SaveXML(dialog.FileName);
+            }
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
@@ -110,6 +115,18 @@ namespace Lesson_06_HW
                 using (FileStream fileStream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Read))
                 {
                     employees = (ObservableCollection<Employee>)formatter.Deserialize(fileStream);
+                }
+            }
+            catch { }
+        }
+        public void SaveXML(string filePath)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Employee>));
+            try
+            {
+                using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                {
+                    serializer.Serialize(fileStream, employees);
                 }
             }
             catch { }

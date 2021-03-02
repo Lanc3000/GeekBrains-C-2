@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Employee>
+    <FIO>Гармошкин Николай Иванович</FIO>
+    <DateOfPreviousExam>2020-12-03T00:00:00</DateOfPreviousExam>
+    <EmployeeBrigade>
+      <BrigadeName>Бригада стабилитронов</BrigadeName>
+    </EmployeeBrigade>
+    <GetBrigadeName>Бригада стабилитронов</GetBrigadeName>
+  </Employee>
+  <Employee>
+    <FIO>Петров Иван Петрович</FIO>
+    <DateOfPreviousExam>2020-02-04T00:00:00</DateOfPreviousExam>
+    <EmployeeBrigade>
+      <BrigadeName>Бригада СВЧ-диодов</BrigadeName>
+    </EmployeeBrigade>
+    <GetBrigadeName>Бригада СВЧ-диодов</GetBrigadeName>
+  </Employee>
+</ArrayOfEmployee>

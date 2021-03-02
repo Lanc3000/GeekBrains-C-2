@@ -2,49 +2,50 @@
 <ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Employee>
     <FIO>Иванова Татьяна Владимировна</FIO>
-    <DateOfPreviousExam>16.12.2020</DateOfPreviousExam>
+    <DateOfPreviousExam>2020-12-03T00:00:00</DateOfPreviousExam>
     <EmployeeBrigade>
       <BrigadeName>Бригада цифрознаковых индикаторов</BrigadeName>
     </EmployeeBrigade>
+
   </Employee>
   <Employee>
     <FIO>Перевозчикова Ирина Ивановна</FIO>
-    <DateOfPreviousExam>16.12.2020</DateOfPreviousExam>
+    <DateOfPreviousExam>2020-12-03T00:00:00</DateOfPreviousExam>
     <EmployeeBrigade>
       <BrigadeName>Бригада цифрознаковых индикаторов</BrigadeName>
     </EmployeeBrigade>
   </Employee>
   <Employee>
     <FIO>Мазуренко Елена Дмитриевна</FIO>
-    <DateOfPreviousExam>16.12.2020</DateOfPreviousExam>
+    <DateOfPreviousExam>2020-12-03T00:00:00</DateOfPreviousExam>
     <EmployeeBrigade>
       <BrigadeName>Бригада цифрознаковых индикаторов</BrigadeName>
     </EmployeeBrigade>
   </Employee>
   <Employee>
     <FIO>Макаренкова Виктория Ивановна</FIO>
-    <DateOfPreviousExam>18.12.2020</DateOfPreviousExam>
+    <DateOfPreviousExam>2020-10-08T00:00:00</DateOfPreviousExam>
     <EmployeeBrigade>
       <BrigadeName>Бригада стабилитронов</BrigadeName>
     </EmployeeBrigade>
   </Employee>
   <Employee>
     <FIO>Чудакова Анна Константиновна</FIO>
-    <DateOfPreviousExam>18.12.2020</DateOfPreviousExam>
+    <DateOfPreviousExam>2020-10-08T00:00:00</DateOfPreviousExam>
     <EmployeeBrigade>
       <BrigadeName>Бригада стабилитронов</BrigadeName>
     </EmployeeBrigade>
   </Employee>
   <Employee>
     <FIO>Зеленина Ирина Владимировна</FIO>
-    <DateOfPreviousExam>19.12.2020</DateOfPreviousExam>
+    <DateOfPreviousExam>2020-06-05T00:00:00</DateOfPreviousExam>
     <EmployeeBrigade>
       <BrigadeName>Бригада СВЧ-диодов</BrigadeName>
     </EmployeeBrigade>
   </Employee>
   <Employee>
     <FIO>Костина Ольга Александровна</FIO>
-    <DateOfPreviousExam>19.12.2020</DateOfPreviousExam>
+    <DateOfPreviousExam>2020-06-05T00:00:00</DateOfPreviousExam>
     <EmployeeBrigade>
       <BrigadeName>Бригада СВЧ-диодов</BrigadeName>
     </EmployeeBrigade>
